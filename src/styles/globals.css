@@ -1,0 +1,45 @@
+/* globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 18, 18, 18;
+  --background-end-rgb: 10, 10, 10;
+  --neon-yellow: 204, 255, 0;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+}
+
+@layer components {
+  .neon-text {
+    @apply text-neon-yellow font-bold;
+    text-shadow:
+      0 0 5px #ccff00,
+      0 0 15px rgba(204, 255, 0, 0.5);
+  }
+
+  .neon-border {
+    @apply border-neon-yellow rounded-md border;
+    box-shadow:
+      0 0 5px #ccff00,
+      0 0 15px rgba(204, 255, 0, 0.5);
+  }
+
+  .btn-primary {
+    @apply bg-neon-yellow text-dark hover:shadow-neon rounded-md px-6 py-3 text-center font-bold transition-all duration-300;
+  }
+}
